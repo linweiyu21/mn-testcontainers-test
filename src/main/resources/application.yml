@@ -1,0 +1,14 @@
+micronaut:
+  application:
+    name: mnTestcontainersTest
+netty:
+  default:
+    allocator:
+      max-order: 3
+test-resources:
+  containers:
+    mysql:
+      image-name: mysql:8
+datasources:
+  default:
+    db-type: mysql

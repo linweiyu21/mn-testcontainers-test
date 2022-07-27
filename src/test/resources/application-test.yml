@@ -1,0 +1,17 @@
+test-resources:
+  containers:
+    mysql:
+      image-name: mysql:8
+datasources:
+  default:
+    db-type: mysql
+r2dbc:
+  datasources:
+    default:
+      db-type: mysql
+flyway:
+  datasources:
+    default:
+      db-type: mysql
+      enabled: true
+      baseline-on-migrate: true

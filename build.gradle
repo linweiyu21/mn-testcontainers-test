@@ -1,0 +1,56 @@
+plugins {
+    id("groovy") 
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("io.micronaut.application") version "3.4.1"
+    id("idea")
+}
+
+version = "0.1"
+group = "org.daisy.testcontainers"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly("io.micronaut.data:micronaut-data-processor")
+    implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut:micronaut-jackson-databind")
+    implementation("io.micronaut.data:micronaut-data-r2dbc")
+    implementation("io.micronaut.flyway:micronaut-flyway")
+    implementation("io.micronaut.groovy:micronaut-runtime-groovy")
+    implementation("jakarta.annotation:jakarta.annotation-api")
+    compileOnly("io.micronaut:micronaut-http-validation")
+    runtimeOnly("ch.qos.logback:logback-classic")
+    runtimeOnly("dev.miku:r2dbc-mysql")
+    runtimeOnly("mysql:mysql-connector-java")
+    runtimeOnly("org.flywaydb:flyway-mysql")
+    testImplementation("org.testcontainers:testcontainers")
+    testImplementation("org.testcontainers:spock")
+    testImplementation("org.testcontainers:mysql")
+    testImplementation("org.testcontainers:jdbc")
+    implementation("io.micronaut:micronaut-validation")
+
+}
+
+
+application {
+    mainClass.set("org.daisy.testcontainers.Application")
+}
+java {
+    sourceCompatibility = JavaVersion.toVersion("11")
+    targetCompatibility = JavaVersion.toVersion("11")
+}
+
+graalvmNative.toolchainDetection = false
+micronaut {
+    runtime("netty")
+    testRuntime("spock2")
+    processing {
+        incremental(true)
+        annotations("org.daisy.testcontainers.*")
+    }
+}
+
+
+

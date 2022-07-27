@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: org.daisy.testcontainers
+testFramework: spock
+sourceLanguage: groovy
+buildTool: gradle
+features: [annotation-api, app-name, data, data-r2dbc, flyway, gradle, groovy, groovy-application, http-client, jackson-databind, logback, micronaut-build, mysql, netty-server, r2dbc, readme, shade, spock, testcontainers, yaml]
