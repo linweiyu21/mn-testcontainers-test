@@ -1,8 +1,8 @@
 plugins {
     id("groovy") 
     id("com.github.johnrengelman.shadow") version "7.1.2"
-    id("io.micronaut.application") version "3.4.1"
-    id("idea")
+    id("io.micronaut.application") version "3.5.1"
+    id("io.micronaut.test-resources") version "3.5.1"
 }
 
 version = "0.1"
@@ -20,16 +20,12 @@ dependencies {
     implementation("io.micronaut.flyway:micronaut-flyway")
     implementation("io.micronaut.groovy:micronaut-runtime-groovy")
     implementation("jakarta.annotation:jakarta.annotation-api")
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     compileOnly("io.micronaut:micronaut-http-validation")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("dev.miku:r2dbc-mysql")
     runtimeOnly("mysql:mysql-connector-java")
     runtimeOnly("org.flywaydb:flyway-mysql")
-    testImplementation("org.testcontainers:testcontainers")
-    testImplementation("org.testcontainers:spock")
-    testImplementation("org.testcontainers:mysql")
-    testImplementation("org.testcontainers:r2dbc")
-    testImplementation("org.testcontainers:jdbc")
     implementation("io.micronaut:micronaut-validation")
 
 }
@@ -52,6 +48,3 @@ micronaut {
         annotations("org.daisy.testcontainers.*")
     }
 }
-
-
-
