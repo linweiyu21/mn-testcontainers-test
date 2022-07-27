@@ -28,6 +28,7 @@ dependencies {
     testImplementation("org.testcontainers:testcontainers")
     testImplementation("org.testcontainers:spock")
     testImplementation("org.testcontainers:mysql")
+    testImplementation("org.testcontainers:r2dbc")
     testImplementation("org.testcontainers:jdbc")
     implementation("io.micronaut:micronaut-validation")
 
