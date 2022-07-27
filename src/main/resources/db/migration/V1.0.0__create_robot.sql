@@ -2,8 +2,8 @@ CREATE TABLE IF NOT EXISTS `robot`
 (
     `id`           BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
     `code`         VARCHAR(255)    NOT NULL,
-    `date_created` DATETIME        NOT NULL NOT NULL,
-    `date_updated` DATETIME        NOT NULL NOT NULL,
+    `date_created` DATETIME        NOT NULL,
+    `date_updated` DATETIME        NOT NULL,
     PRIMARY KEY (`id`)
     );
 
