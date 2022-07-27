@@ -37,5 +37,3 @@
 
 - [https://flywaydb.org/](https://flywaydb.org/)
 
-
-# mn-testcontainers-test
